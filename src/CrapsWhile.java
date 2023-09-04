@@ -19,7 +19,7 @@ Over the long run, who  is going to win the most games, you or the house?
 //Import the random class.
 import java.util.*;
 import java.text.*;
-public class Craps {
+public class CrapsWhile {
     public static void main(String[] args) {
         //10,000
         //counter
@@ -32,8 +32,8 @@ public class Craps {
         int losses = 0;
 
         //Create a while or for loop when the number of games played.
-
-        for (int game = 0; game < 10000; game++) //within that for loop, if 7 is the first number rolled, the player loses.
+int game = 0;
+        while (game < 10000) //within that for loop, if 7 is the first number rolled, the player loses.
         {
             int comeOutRoll = (int) (Math.random() * 10) + 2; //For example, comeOutRoll = 5 typecasted as an integer.
 
@@ -48,44 +48,47 @@ public class Craps {
 
             }
             // Condition of losing is either 2, 3, or 12
-            else  if (comeOutRoll == 2 || comeOutRoll == 3 || comeOutRoll == 12)
-             {
+            if (comeOutRoll == 2 || comeOutRoll == 3 || comeOutRoll == 12)
+            {
                 System.out.println("You get... NOTHING! YOU LOSE!!! GOOD DAY SIR!");
                 losses = losses + 1;
             }
             // It is neither a win or a loss.  Will Keep looping
-            else //(comeOutRoll == 4 || comeOutRoll == 5 || comeOutRoll == 6 || comeOutRoll == 8 || comeOutRoll == 9 || comeOutRoll == 10)
+            else if (comeOutRoll == 4 || comeOutRoll == 5 || comeOutRoll == 6 || comeOutRoll == 8 || comeOutRoll == 9 || comeOutRoll == 10)
             {
                 int thePoint = comeOutRoll;
                 System.out.println("The Point is ??????? " + thePoint);
-                    int inRoll;
-                    //Include a do-while loop for the
-                do {
+
+                int inRoll = (int) (Math.random() * 10) + 2;
+                System.out.println("++++++++++" + inRoll);
+                //I would rather use a switch statement instead.
+                //if the first roll after the point is 7, the player loses the bet.
+                if (inRoll == 7 && game == 1) {
+                    System.out.println("You get... NOTHING! YOU LOSE!!! GOOD DAY SIR!");
+                    losses = losses + 1;
+                }
+                //if the first roll after the point is seven,  the player loses the bet.
+                else
+                {
                     inRoll = (int) (Math.random() * 10) + 2;
-                    System.out.println("++++++++++" + inRoll);
-                    //I would rather use a switch statement instead.
-                    //if the first roll after the point is 7, the player loses the bet.
-                    if (inRoll == 7) {
-                        System.out.println("You get... NOTHING! YOU LOSE!!! GOOD DAY SIR!");
-                        losses = losses + 1;
-                        break; //exit the do loop when loss.
-                    }
-                    //if the first roll after the point is seven,  the player loses the bet.
+                }
+                //you matched the point.  Winll is 7, the player loses the bet.
+                if (inRoll == thePoint) {
+                    System.out.println("YOU WON! YOU DID IT! I KNEW YOU WOULD, I JUST KNEW YOU WOULD!");
+                    wins = wins + 1;
+                }
 
-                    //you matched the point.  Winll is 7, the player loses the bet.
-                    if (inRoll == thePoint) {
-                        System.out.println("YOU WON! YOU DID IT! I KNEW YOU WOULD, I JUST KNEW YOU WOULD!");
-                        wins = wins + 1;
-                        break; //exit the do loop after victory.
-                    }
+                if (inRoll == 7 && game != 1) {
+                    System.out.println("YOU WON! YOU DID IT! I KNEW YOU WOULD, I JUST KNEW YOU WOULD!");
+                    wins = wins + 1;
+                }
 
-                } while (inRoll != 7 || inRoll != thePoint);
 
             }
             System.out.println("END  >>>>> Current Random " + comeOutRoll + " Over " + game + " rolls, There are " + wins + " wins" + " and " + losses + " losses.");
 
         }
-        double chanceOfVictory = (double) wins/(wins+losses);
+        double chanceOfVictory = wins / (wins + losses);
         System.out.println("=============================================================");
         System.out.println("There are " + wins + " wins");
         System.out.println("and " + losses + " losses.");
