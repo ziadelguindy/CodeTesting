@@ -20,22 +20,26 @@ public class InflationVsPencils {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         NumberFormat.getCurrencyInstance(Locale.US);
+String response;
+        do {
+            System.out.println("Input the cost and round to two decimal places.");
+            double cost = input.nextDouble();
 
-        System.out.println("Input the cost and round to two decimal places.");
-        double cost = input.nextDouble();
+            System.out.println("Enter the number of years.");
+            double years = input.nextDouble();
 
-        System.out.println("Enter the number of years.");
-        double years = input.nextDouble();
+            System.out.println("Enter the inflation rate in percent.");
+            double inflPercent = input.nextDouble();
+            double inflation = inflPercent / 100.0;
 
-        System.out.println("Enter the inflation rate in percent.");
-        double inflPercent = input.nextDouble();
-        double inflation = inflPercent / 100.0;
+            double finalCost = cost * Math.pow((1 + inflation), years);
+            System.out.println("The cost after that time is");
+            System.out.printf("%.2f", finalCost);
+            System.out.println("\n Additional changes in price/inflation rate? If so, please enter the cost in the previous cycle.");
+            response = input.next();
+        } while (response.equalsIgnoreCase("yes"));
 
-        double finalCost = cost * Math.pow((1 + inflation), years);
-        System.out.println("The cost after that time is");
-        System.out.printf("%.2f", finalCost);
-
-        //TODO: add a loop.
+        //TODO: add a while/do-while/for loop.
 
 
 
