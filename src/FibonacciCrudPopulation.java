@@ -29,23 +29,29 @@ import java.util.Scanner;
 public class FibonacciCrudPopulation {
     public static void main(String[] args) {
         Scanner nyet = new Scanner(System.in);
-    int initialCrud = 10; //10 pounds of crud in the start.
-        int secondCrud = 10; //
+        String response;
+        do {
+            double initialCrud = 10.0; //10 pounds of crud in the start.
+            double secondCrud = 10.0; //
 
-        System.out.println("Enter how many 5-day sets you want for the crud to grow.");
-        int fiveDaySet = nyet.nextInt();
-        int nextCrud;
+            System.out.println("Enter how many 5-day sets you want for the crud to grow.");
+            int fiveDaySet = nyet.nextInt();
+            double nextCrud;
 
-        for(int i = 0; i < fiveDaySet; i++) //Repeat for however long five days sets that the user has entered.
+            for (int i = 0; i < fiveDaySet; i++) //Repeat for however long five days sets that the user has entered.
             {
                 nextCrud = initialCrud + secondCrud;   //>>>>>>>>>>>>>>>>>>>>>>
 
-                System.out.println("In 5-day set #" + (i + 1) + ", (" + ((i+1)* 5) + " days have passed)");
+                System.out.println("In 5-day set #" + (i + 1) + ", (" + ((i + 1) * 5) + " days have passed)");
                 System.out.println(initialCrud + " + " + secondCrud + " = " + nextCrud + " pounds of crud. \n");
 
 
                 initialCrud = secondCrud; //This goes first.
                 secondCrud = nextCrud; //followed by that.
+            }
+            System.out.println("Would you like to try again?");
+            response = nyet.next();
+        } while(response.equalsIgnoreCase("yes"));
 
 //The order of the value updating is what is important, the initial value should be updated first.
         }
@@ -54,8 +60,8 @@ public class FibonacciCrudPopulation {
 
 
 
-//TODO Add a loop and ask the user for additional crud growth.
+//TODO (Optional) Ask the user for the initial crud in the start.
 
 
     }
-}
+
