@@ -35,25 +35,37 @@ public class InterestWithAStereo {
         //50-dollar initial Monthly payment
         double monthlyPaymentIn = 50.00;
 
-        //interest cost
-        double interestCost = cost * monthlyInterest;
-
-        //the principal amount minus the difference of monthly payment and interest
-        double principalDiff = monthlyPaymentIn - interestCost;
+        double interestCost;
+        double principalDiff;
+        double nextPrincipal;
 
         //down-payment
-        double downpayment = 0.00;
+        //double downpayment = 0.00;
         //initial debt
 
-        double debt = originalCost - downpayment;
+        //double debt = originalCost - downpayment;
         //do-while or for loop for each monthly payment
 
-
+        int months = 0;
+        double cumulativeInterest = 0;
         // TODO: Will add the loop contents later.
 do
 {
-double nextPrincipal = originalCost - principalDiff;
-    System.out.println(nextPrincipal);
-} while(interestCost > 0.00);
+//interest cost
+    interestCost = originalCost * monthlyInterest;
+
+    //the principal amount minus the difference of monthly payment and interest
+    principalDiff = monthlyPaymentIn - interestCost;
+    nextPrincipal = originalCost - principalDiff;
+
+    originalCost = nextPrincipal;
+
+    System.out.printf("%.2f \n", nextPrincipal);
+    months++;
+    System.out.println("The principal becomes zero after " + months + " months.");
+    cumulativeInterest = cumulativeInterest + interestCost;
+    System.out.printf("%.2f \n", cumulativeInterest);
+
+} while(interestCost > 0.00 && nextPrincipal > 0.00);
     }
 }
