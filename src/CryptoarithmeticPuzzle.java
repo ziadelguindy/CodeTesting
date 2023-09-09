@@ -61,3 +61,12 @@ public class CryptoarithmeticPuzzle {
         }
     }
 }
+/*
+We have learned that to break out of an iteration of a loop, use the keyword "continue".
+To exit out of a loop in its entirety, use the keyword "break".
+
+We made a graphic display of what the values of the four characters (T, O, G, and D) should be in order to find a valid solution.
+We tested the solution by hand to see how it works.
+
+WE ALSO LEARNED HOW TO A STRING AS AN INTEGER USING (ones, tens, hundred, thousands, etc.)
+ */
