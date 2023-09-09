@@ -32,7 +32,7 @@ public class CrapsWhile {
         int losses = 0;
 
         //Create a while or for loop when the number of games played.
-int game = 0;
+        int game = 0;
         while (game < 10000) //within that for loop, if 7 is the first number rolled, the player loses.
         {
             int comeOutRoll = (int) (Math.random() * 10) + 2; //For example, comeOutRoll = 5 typecasted as an integer.
