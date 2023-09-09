@@ -51,8 +51,10 @@ public class CryptoarithmeticPuzzle {
                         if (GOOD == 4 * TOO)
                         {
                             System.out.println("GOOD = " + GOOD + " and TOO equals " + TOO + ".");
+                            System.out.println("T is " + T + ", G is " + G + ", O is " + O + ", and D is " + D + ".");
                             System.exit(0);
                         }
+                        System.out.println("That did not work. T = " + T + " and O = " + O + " and G = " + G + " and D = " + D + ". TOO = " + TOO + " and GOOD = " + GOOD);
                     }
                 }
             }
