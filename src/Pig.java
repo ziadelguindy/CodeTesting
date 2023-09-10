@@ -67,6 +67,7 @@ public class Pig {
                     if (hRoll > 1)
                         hSubScore= hSubScore + hRoll;
                     else
+                        turn = 'c';
                         continue;
 
                 }
