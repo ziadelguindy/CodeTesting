@@ -77,6 +77,7 @@ public class Pig {
                     hScore = hScore + hSubScore;
                     System.out.println("Your current score is " + hScore + " out of 100 points.");
                     turn = 'c';
+                    continue;
                 }
 
             }
