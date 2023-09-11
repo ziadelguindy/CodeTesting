@@ -85,6 +85,7 @@ public class Pig {
 
             if (cRoll > 1 && turn == 'c')
             {
+                cSubScore = 0;
                 while (cSubScore < 20 && cRoll > 1)
                 {
                     cRoll = (int) ((5 * Math.random()) + 1);
