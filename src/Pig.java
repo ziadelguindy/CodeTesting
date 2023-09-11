@@ -66,9 +66,10 @@ public class Pig {
                     System.out.println("You now rolled a " + hRoll + ". ");
                     if (hRoll > 1)
                         hSubScore= hSubScore + hRoll;
-                    else
+                    else {
                         turn = 'c';
                         continue;
+                    }
 
                 }
 
