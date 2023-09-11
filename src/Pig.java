@@ -102,6 +102,7 @@ public class Pig {
                 if (cRoll == 1)
                 {
                     turn = 'h';
+                    continue;
                 }
             }
             System.out.println("The current player score is " + hScore + " and the current computer score is " + cScore + ".");
